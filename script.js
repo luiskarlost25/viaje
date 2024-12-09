@@ -1,71 +1,38 @@
 
-let VacationCalculate =document.getElementById('vacationCalc')
 
-VacationCalculate.addEventListener('submit',calcExpenses)
+// script.js
 
-function getValues(){
+document.getElementById("vacationCalc").addEventListener("submit", function (e) {
+  e.preventDefault(); // Evitar que la página recargue
 
-    let 
-    destiny =document.getElementById('destiny').value ,
-    budget =document.getElementById('budget').value,
-    acomodation =document.getElementById('acomodation').value,
-    transport =document.getElementById('transport').value,
-    food =document.getElementById('food').value;
+  // Obtener valores ingresados por el usuario
+  const destiny = document.getElementById("destiny").value;
+  const budget = parseFloat(document.getElementById("budget").value);
+  const acomodation = parseFloat(document.getElementById("acomodation").value);
+  const transport = parseFloat(document.getElementById("transport").value);
+  const food = parseFloat(document.getElementById("food").value);
 
+  // Calcular el total de los costos
+  const totalCost = acomodation + transport + food;
 
-    return{destiny,budget,acomodation,transport,food}
+  // Seleccionar el div donde se mostrará el resultado
+  const resultDiv = document.getElementById("result");
 
-}
-function calcExpenses(e){
-
-    e.preventDefault();
-
-    const{destiny,budget,acomodation,transport,food}=getValues();
-
-    /*console.log(destiny,budget)*/
-
-    let expenses=parseInt(acomodation)
-    +parseInt(transport)+parseInt(food)
-
-    let balance =budget-expenses
-    UI(destiny,budget,balance)
-    /*console.log(destiny,budget,balance)*/
-}
-    
-
-function UI(destiny,budget,balance){
-
-        let result =document.getElementById('result')
-        let dataPrint =document.createElement('div')
-
-        dataPrint.innerHTML=
-        `
-        <div class="container-data row">
-            <div class="col s4">
-                <h6>${destiny}</h6>
-            </div>
-            <div class="col s4">
-                <h6>${budget}</h6>
-            </div>
-            <div class="col s4">
-                <h6>${balance}</h6>
-            </div>
-            
-        </div>
-        `
-        
-        result.appendChild(dataPrint)
-        
-        reset();
-
-    }
-
-    function reset(){
-
-document.getElementById('vacationCalc').reset()
-
-
-
-    }
-    
-
+  // Comparar presupuesto con el total de costos
+  if (budget >= totalCost) {
+    resultDiv.innerHTML = `
+      <p style="color: green; font-size: 18px;">
+        ¡Buen viaje a <strong>${destiny}</strong>! Tu presupuesto de 
+        S/. ${budget.toFixed(2)} es suficiente. ¡A disfrutar!
+      </p>
+    `;
+  } else {
+    const difference = totalCost - budget;
+    resultDiv.innerHTML = `
+      <p style="color: red; font-size: 18px;">
+        ¡Oh no! Necesitas S/. ${difference.toFixed(2)} más para tu viaje a 
+        <strong>${destiny}</strong>. ¿Qué tal buscar ofertas o invitar a un amigo para compartir los gastos?
+      </p>
+    `;
+  }
+});
