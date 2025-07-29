@@ -1,0 +1,41 @@
+body {
+  background-color: #f5f5f5; /* Un fondo claro para un mejor contraste */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto; /* Asegura que el contenido principal ocupe el espacio disponible */
+  padding-top: 20px; /* Espacio superior para el contenido */
+  padding-bottom: 20px; /* Espacio inferior para el contenido */
+}
+
+/* Estilo para los cards */
+.card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Asegura que los íconos de Font Awesome en los input-field se vean bien */
+.input-field .prefix {
+  margin-top: 0.5rem;
+}
+
+/* Estilo para los íconos en el "Resumen de tu Viaje" si decides usarlos de esa forma */
+.icons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.icons h5 {
+  font-size: 2rem;
+  color: #2196f3; /* Color azul de Materialize */
+}
+
+/* Estilo para el resultado */
+#result {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
