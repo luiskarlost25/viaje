@@ -1,5 +1,5 @@
 body {
-  background-color: #f5f5f5; /* Un fondo claro para un mejor contraste */
+  background-color: #303030; /* Un fondo claro para un mejor contraste */
   display: flex;
   min-height: 100vh;
   flex-direction: column;
