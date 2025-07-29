@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planea tu Viaje.com - Calculadora de Presupuesto de Viaje</title>
+    <title>Viaje Facilito - Calculadora de Presupuesto</title>
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
     />
     <link
       rel="stylesheet"
@@ -25,86 +29,78 @@
       </div>
     </nav>
 
-    <div class="container main-content">
-      <div class="row">
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
-          <div class="card z-depth-3">
-            <div class="card-content">
-              <span class="card-title center-align"
-                >Calcula el Presupuesto de tu Viaje</span
-              >
-              <form id="vacationCalc">
-                <div class="input-field">
-                  <i class="material-icons prefix">flight</i>
-                  <input
-                    type="text"
-                    id="destiny"
-                    class="validate"
-                    required
-                  />
-                  <label for="destiny">Destino</label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">attach_money</i>
-                  <input
-                    type="number"
-                    id="budget"
-                    class="validate"
-                    required
-                  />
-                  <label for="budget">Presupuesto Total</label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">hotel</i>
-                  <input
-                    type="number"
-                    id="acomodation"
-                    class="validate"
-                    required
-                  />
-                  <label for="acomodation">Costo de Alojamiento</label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">directions_car</i>
-                  <input
-                    type="number"
-                    id="transport"
-                    class="validate"
-                    required
-                  />
-                  <label for="transport">Costo de Transporte</label>
-                </div>
-                <div class="input-field">
-                  <i class="material-icons prefix">local_dining</i>
-                  <input
-                    type="number"
-                    id="food"
-                    class="validate"
-                    required
-                  />
-                  <label for="food">Costo de Comida</label>
-                </div>
-                <button
-                  class="btn waves-effect waves-light blue darken-1 z-depth-2"
-                  type="submit"
-                  name="action"
+    <div class="main-wrapper">
+      <div class="container custom-card-container">
+        <div class="row">
+          <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <div class="card z-depth-4">
+              <div class="card-content">
+                <span class="card-title center-align blue-text text-darken-2"
+                  >Calcula tu Presupuesto de Viaje</span
                 >
-                  Calcular
-                  <i class="material-icons right">send</i>
-                </button>
-              </form>
+                <form id="vacationCalc">
+                  <div class="input-field">
+                    <i class="material-icons prefix">flight</i>
+                    <input type="text" id="destiny" class="validate" required />
+                    <label for="destiny">Destino</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">attach_money</i>
+                    <input
+                      type="number"
+                      id="budget"
+                      class="validate"
+                      required
+                    />
+                    <label for="budget">Presupuesto Total</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">hotel</i>
+                    <input
+                      type="number"
+                      id="acomodation"
+                      class="validate"
+                      required
+                    />
+                    <label for="acomodation">Costo de Alojamiento</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">directions_car</i>
+                    <input
+                      type="number"
+                      id="transport"
+                      class="validate"
+                      required
+                    />
+                    <label for="transport">Costo de Transporte</label>
+                  </div>
+                  <div class="input-field">
+                    <i class="material-icons prefix">local_dining</i>
+                    <input type="number" id="food" class="validate" required />
+                    <label for="food">Costo de Comida</label>
+                  </div>
+                  <button
+                    class="btn waves-effect waves-light blue darken-1 z-depth-2 right"
+                    type="submit"
+                    name="action"
+                  >
+                    Calcular
+                    <i class="material-icons right">send</i>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col s12">
-          <div class="card z-depth-2 blue-grey lighten-5">
-            <div class="card-content black-text">
-              <span class="card-title">Resumen de tu Viaje</span>
-              <div id="result">
-                <p>Ingresa los datos para calcular tu presupuesto.</p>
+        <div class="row">
+          <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <div class="card z-depth-3 blue-grey lighten-5">
+              <div class="card-content black-text">
+                <span class="card-title">Resumen de tu Viaje</span>
+                <div id="result">
+                  <p>Ingresa los datos para calcular tu presupuesto.</p>
+                </div>
               </div>
             </div>
           </div>
